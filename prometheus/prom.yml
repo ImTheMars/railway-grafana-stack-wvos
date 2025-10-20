@@ -6,6 +6,14 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  # Jarvis AI Backend
+  - job_name: 'jarvis-backend'
+    scheme: http
+    scrape_interval: 15s
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['jarvis-ai.railway.internal:8080']
+
   # - job_name: 'example_api'
   #   scheme: http
   #   static_configs:
